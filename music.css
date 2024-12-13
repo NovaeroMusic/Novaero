@@ -240,18 +240,20 @@ header a:hover {
 
 
 /* Responsive Design */
+@media (min-width: 768px) { 
+  .album {
+    flex-direction: row; 
+    align-items: center;
+  }
+
+  .album-image {
+    flex: 0 0 150px; /* Set a fixed width for the image on larger screens */
+    margin-right: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .social-nav {
     flex-direction: column;
     align-items: center;
   }
