@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the rising talent of Novaero, an independent artist. Discover captivating music, thought-provoking poetry and immerse yourself in a world of artistic expression."> 
+    <meta name="keywords" content="Novaero, music, artist, poetry, songs, albums, downloads, streaming, creative, expression, art"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-zR2Th81C3h158Uew+4qS096rZWbD4l8l3xss2D0QhfilKL4y45tY+k2qE3Qh460D3M6eN6VHAWj7/WGzYl5YHV4ok/47MJD+aion4rdIblw0xH/vM/KlpUqb9M/4d9q3jXEVuR+3m7n/s/j32p/6w/7+7j/KGk2+0/4g==" crossorigin="anonymous"/>
+    <title>Novaero</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="./images/NovaeroMusicPurple.png">
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./music.html">Music</a></li>
+                <li><a href="./poetry.html">Literature</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Novaero</h1>
+        <p>Explore Novaero's music and literature.</p>
+    </main>
+
+    <footer>
+        <nav class="social-nav">
+            <ul>
+                <li><a href="https://www.instagram.com/novaero_music"><img src="./images/icons/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61563615598508"><img src="./images/icons/facebook.svg" alt="Facebook"></a></li>
+                <li><a href="https://audiomack.com/novaero2027"><img src="./images/icons/audiomack.svg" alt="Audiomack"></a></li>
+                <li><a href="https://www.youtube.com/@Novaero2027"><img src="./images/icons/youtube.svg" alt="YouTube"></a></li>
+                <li><a href="https://soundcloud.com/novaeroofficial"><img src="./images/icons/soundcloud.svg" alt="soundcloud"></a></li>
+            </ul>
+        </nav>
+        <br>
+        &copy; 2024 Novaero
+    </footer>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('toggleSidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
