@@ -16,11 +16,12 @@
         
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="./music.html">Music</a></li>
-                <li><a href="./poetry.html">Literature</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="./music.html">Albums</a></li>
+              <li><a href="./playlists.html">Playlists</a></li>
+              <li><a href="./poetry.html">Literature</a></li>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>
@@ -29,25 +30,54 @@
     </main>
 
     <footer>
-        <nav class="social-nav">
-            <ul>
-                <li><a href="https://www.instagram.com/novaero_music"><img src="./images/icons/instagram.svg" alt="Instagram"></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61563615598508"><img src="./images/icons/facebook.svg" alt="Facebook"></a></li>
-                <li><a href="https://audiomack.com/novaero2027"><img src="./images/icons/audiomack.svg" alt="Audiomack"></a></li>
-                <li><a href="https://www.youtube.com/@Novaero2027"><img src="./images/icons/youtube.svg" alt="YouTube"></a></li>
-                <li><a href="https://soundcloud.com/novaeroofficial"><img src="./images/icons/soundcloud.svg" alt="soundcloud"></a></li>
-            </ul>
-        </nav>
+        <ul class="styled-list">
+            <li>
+                <a href="https://www.instagram.com/novaero_music">
+                    <img src="images/icons/instagram.svg" alt="Image 1">
+                    @ novaero_music
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61563615598508">
+                    <img src="images/icons/facebook.svg" alt="Image 2">
+                    Nova-27 Updates
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@Novaero2027">
+                    <img src="images/icons/youtube.svg" alt="Image 3">
+                    Novaero
+                </a>
+            </li>
+            <li>
+                <a href="https://music.youtube.com/channel/UCj7U7KIYA8xq_DBHLS0QpmQ?si=qwMU8pss2yxQdJhT">
+                    <img src="images/icons/youtubemusic.svg" alt="Image 3">
+                    Novaero
+                </a>
+            </li>
+            <li>
+                <a href="https://audiomack.com/novaero2027">
+                    <img src="images/icons/audiomack.svg" alt="Image 4">
+                    Novaero
+                </a>
+            </li>
+            <li>
+                <a href="https://soundcloud.com/novaeroofficial">
+                    <img src="images/icons/soundcloud.svg" alt="Image 5">
+                    Novaero
+                </a>
+            </li>
+        </ul>
+    
         <br>
         &copy; 2024 Novaero
     </footer>
-
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleButton = document.getElementById('toggleSidebar');
+        const button = document.querySelector('.dropdown-button');
+        const dropdown = document.querySelector('.dropdown-content');
 
-        toggleButton.addEventListener('click', () => {
-            sidebar.classList.toggle('show');
+        button.addEventListener('click', () => {
+        dropdown.classList.toggle('show');
         });
     </script>
 </body>
