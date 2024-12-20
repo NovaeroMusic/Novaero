@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the world of poetry with Novaero. Discover a collection of poems, read excerpts, and delve into the depths of lyrical expression."> 
     <meta name="keywords" content="poetry, poems, poet, Novaero, literature, words, art, creative writing, verse, lyrical, prose, expression">
-    <title>My Poetry</title>
+    <title>Novaero's Poetry</title>
     <link rel="stylesheet" href="poetry.css">
 </head>
 <body>
-    <header>
-        <a href="./index.html">Back to Home</a>
-    </header>
-
     <main>
         <h2>Poetry Books</h2>
         <section class="book book1">
@@ -37,7 +33,7 @@
             </div>
             
             <div class="book-cover">
-                <img src="images/Phantom's Promise - Cover Art.jpg" alt="Phantom's Promise Cover">
+                <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover">
                 <a href="books/Phantom's Promise.pdf" download>Download</a>
             </div>
         </section>
@@ -64,8 +60,8 @@
             </div>
             
             <div class="book-cover">
-                <img src="images/imagepath" alt="title Cover">
-                <a href="books/filepath" download>Download</a>
+                <img src="/images/imagepath" alt="title Cover">
+                <a href="/books/filepath" download>Download</a>
             </div>
         </section>
         -->
@@ -74,51 +70,5 @@
     <footer>
         &copy; 2024 Novaero
     </footer>
-
-    <script>
-        const poemsPerPage = 2; // Display one poem per page
-        let currentPage = 1;
-        const totalPoems = 5; // Replace with your actual number of poems
-
-        const poemContainer = document.querySelector('.poem-container');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-
-        function displayPoems(page) {
-            poemContainer.innerHTML = '';
-            for (let i = (page - 1) * poemsPerPage; i < page * poemsPerPage && i < totalPoems; i++) {
-                const poem = document.createElement('div');
-                poem.classList.add('poem');
-                poem.innerHTML = `
-                    <h3>Poem ${i + 1}</h3>
-                    <p>Your poem content here</p>
-                `;
-                poemContainer.appendChild(poem);
-            }
-        }
-
-        function updatePaginationButtons() {
-            prevBtn.disabled = currentPage === 1;
-            nextBtn.disabled = currentPage === Math.ceil(totalPoems / poemsPerPage);
-        }
-
-        displayPoems(currentPage);
-
-        prevBtn.addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                displayPoems(currentPage);
-                updatePaginationButtons();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (currentPage < Math.ceil(totalPoems / poemsPerPage)) {
-                currentPage++;
-                displayPoems(currentPage);
-                updatePaginationButtons();
-            }
-        });
-    </script>
 </body>
 </html>
