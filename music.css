@@ -93,12 +93,14 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
     padding: 20px;
     background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .book img {
@@ -111,6 +113,7 @@ h2 {
 .book-info {
     flex: 1;
     margin-left: 20px;
+    text-align: center;
 }
 
 .book-cover {
@@ -176,7 +179,7 @@ header a:hover {
     max-width: 180px;
     height: auto;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .album a {
@@ -217,22 +220,31 @@ header a:hover {
     text-decoration: none;
 }
 
-.streaming-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+.styled-list {
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+    align-items:center;
 }
 
-.stream-link {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
+.styled-list li {
+    margin-bottom: 20px;
+}
+
+.styled-list a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    font-weight: bold;
+    color: #ffffff; /* Adjust the link color as needed */
+}
+
+.styled-list img {
+    width: 50px; /* Adjust the image width as needed */
+    margin-right: 10px;
+}
+
+.styled-list a:hover {
+    background-color: #534080; /* Adjust the hover color as needed */
 }
 
 .stream-link:hover {
