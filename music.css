@@ -353,6 +353,7 @@ header a:hover {
     }
 
     .playlist-container {
+        flex-direction: column;
         justify-content: center; 
     }
 
