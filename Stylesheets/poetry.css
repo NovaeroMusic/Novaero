@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+}
+
+header {
+    background-color: #534080;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.poem-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    overflow-y: auto;
+    height: 400px; /* Adjust the height as needed */
+}
+
+.poem {
+    flex: 1;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.poem h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.poem p {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover{
+    background-color: #777;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.poem a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.poem a:hover {
+    background-color: #777;
+}
+
+.book img {
+    max-width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+.book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.book1 {
+    background-color: #333;
+}
+
+.book2 {
+    background-color: #444;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-cover {
+    text-align: center;
+}
+
+.book-cover img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.book-cover a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.book-cover a:hover {
+    background-color: #777;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #555;
+}
+
+header a:hover {
+    background-color: #777;
+}
+
+/* Your existing CSS styles */
+
+.album, .single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .album img, .single img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .album h3, .single h3 {
+    margin-bottom: 10px;
+  }
+  
+  .album a, .single a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .album {
+    width: 48%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensures width includes padding and border */
+    justify-content: center;
+}
+  
+.album1 {
+    background-color: #333;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .social-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+}

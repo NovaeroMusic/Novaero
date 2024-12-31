@@ -1,0 +1,203 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #534080;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main.album-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start; /* Align items to the top of the grid */
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.book {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s;
+    height: 100%; /* Ensure the height adapts correctly */
+    box-sizing: border-box; /* Prevent padding from affecting the dimensions */
+}
+
+.book-info {
+    text-align: center;
+    width: 100%;
+}
+
+.book-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.book img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.book p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.tracklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.tracklist li {
+    list-style: none;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    gap: 10px;
+}
+
+.tracklist li:hover {
+    background-color: #444;
+}
+
+.tracklist li a {
+    display: flex; /* Ensure the link spans the entire list item */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Make the link span the full width of the item */
+    color: #fff;
+    text-decoration: none;
+    padding: 0; /* Ensure no extra padding affects layout */
+}
+.styled-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Ensures no bullet points */
+}
+
+.styled-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #555;
+    color: #fff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    gap: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.styled-list img {
+    width: 30px;
+    height: 30px;
+}
+
+.styled-list a:hover {
+    background-color: #777;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-top: 3px solid #534080;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    main.album-page {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .styled-list a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    main.album-page {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    header {
+        font-size: 20px;
+    }
+
+    .book {
+        padding: 10px;
+    }
+
+    .book img {
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .styled-list a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
