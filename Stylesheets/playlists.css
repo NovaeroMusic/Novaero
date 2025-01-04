@@ -1,0 +1,143 @@
+/* Reset some default styling for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e; /* Dark background for a sleek look */
+    color: #eaeaea; /* Light text for contrast */
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    background-color: #534080; /* Keep the original background color */
+    color: #fff;
+    padding: 2px 20px; /* Smaller padding for a more compact header */
+    text-align: center;
+    font-size: 24px; /* Smaller font size */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for subtle depth */
+    position: fixed; /* Keeps the header fixed at the top of the page */
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header:hover {
+    background-color: #4a3455; /* Hover effect */
+}
+
+/* Main container for the content */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+/* Each playlist section styling */
+.book {
+    width: 70%; /* Reduced width for smaller size */
+    max-width: 800px; /* Maximum width for large screens */
+    margin: 15px 0; /* Reduced vertical spacing between sections */
+    padding: 15px; /* Reduced padding */
+    background-color: #2d2d2d; /* Slightly lighter dark background for sections */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for each section */
+.book:hover {
+    transform: translateY(-10px);
+}
+
+/* Title for each playlist */
+.book h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Information about each playlist */
+.book-info {
+    margin-bottom: 15px;
+}
+
+/* Cover image inside each playlist */
+.book-cover {
+    margin-top: 15px;
+}
+
+.book-cover img {
+    width: 80%; /* Set the width to 80% of the container */
+    max-width: 500px; /* Limit the maximum width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure the image is block level for better layout */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Styled list for the Listen Now links */
+.styled-list {
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.styled-list li {
+    margin-bottom: 10px;
+}
+
+.styled-list a {
+    text-decoration: none;
+    background-color: #4a3455; /* Dark button style */
+    color: #fff;
+    padding: 12px 30px; /* Bigger buttons for emphasis */
+    border-radius: 30px; /* Larger rounded corners */
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-list a:hover {
+    background-color: #6449a3; /* Hover effect */
+    transform: scale(1.05); /* Slightly bigger on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+footer {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 3px solid #534080;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .book {
+        width: 85%;
+    }
+
+    .book-cover img {
+        width: 70%; /* Make the image smaller on tablet-sized screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .book {
+        width: 95%; /* Adjust width for mobile */
+    }
+
+    .book-cover img {
+        width: 60%; /* Further reduce the image size on mobile screens */
+    }
+}

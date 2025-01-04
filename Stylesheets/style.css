@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #000, #333);
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #534080;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.styled-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.styled-list li {
+    margin-bottom: 20px;
+}
+
+.styled-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.styled-list img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.styled-list a:hover {
+    background-color: #534080;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav li {
+        display: block;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .styled-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
