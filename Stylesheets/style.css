@@ -148,6 +148,79 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
 }
 
+.updates-and-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    flex-direction: column;
+}
+
+.recent-updates {
+    flex: 2; /* Takes up more space compared to social links */
+    display: flex;
+    flex-direction: column; /* Ensures updates stack vertically */
+    gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+    flex: 1; /* Takes up less space */
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.recent-updates h2, .social-links h2 {
+    font-size: 24px;
+    color: #534080;
+    margin-bottom: 20px;
+}
+
+.recent-updates ul, .social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-updates li {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.recent-updates li p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.recent-updates li a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.recent-updates li a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-links li a {
+    font-size: 16px;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.social-links li a:hover {
+    color: #fff;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -178,6 +251,92 @@ footer {
     nav .styled-list {
         flex-direction: column;
         align-items: center;
+    }
+
+    .recent-updates h2 {
+        font-size: 20px;
+    }
+
+    .updates-list li h3 {
+        font-size: 16px;
+    }
+
+    .updates-list li p {
+        font-size: 12px;
+    }
+
+    .updates-and-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap; /* Allows stacking on smaller screens */
+    }
+    
+    .recent-updates {
+        flex: 2; /* Takes up more space compared to social links */
+        display: flex;
+        flex-direction: column; /* Ensures updates stack vertically */
+        gap: 20px;
+        background-color: #222;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-links {
+        flex: 1; /* Takes up less space */
+        background-color: #222;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .recent-updates h2, .social-links h2 {
+        font-size: 24px;
+        color: #534080;
+        margin-bottom: 20px;
+    }
+    
+    .recent-updates ul, .social-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .recent-updates li {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+        color: #ddd;
+    }
+    
+    .recent-updates li p {
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    .recent-updates li a {
+        color: #534080;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .recent-updates li a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .social-links li a {
+        font-size: 16px;
+        color: #ddd;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    
+    .social-links li a:hover {
+        color: #fff;
     }
 }
 
@@ -217,5 +376,25 @@ footer {
     .social-links .styled-list {
         flex-direction: column;
         align-items: center;
+    }
+
+    .recent-updates {
+        padding: 15px;
+    }
+
+    .updates-list li {
+        padding: 10px;
+    }
+
+    .recent-updates h2, .social-links h2 {
+        font-size: 20px;
+    }
+
+    .recent-updates li p {
+        font-size: 14px;
+    }
+
+    .social-links li a {
+        font-size: 14px;
     }
 }
