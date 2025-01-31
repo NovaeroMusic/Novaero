@@ -1,400 +1,185 @@
-/* Resetting default styles */
-body, h1, h2, p, ol, li, ul, a {
+/* Reset Styles */
+body, h1, h2, p, ul, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #181818;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
     color: #fff;
-    line-height: 1.6;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px; /* To avoid the header overlap */
 }
 
 /* Header Styling */
 header {
     width: 100%;
-    background-color: #534080;
+    background-color: #1f1f1f;
     color: #fff;
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000;
 }
 
-/* Header text */
-header {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Profile Picture Section */
-.profile-pic {
-    margin-top: 100px; /* Spacing below the fixed header */
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.profile-pic img {
-    width: 180px; /* Adjusted for larger screens */
-    height: 180px; /* Adjusted for larger screens */
-    border-radius: 50%;
-    border: 1px solid #534080;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Navigation buttons list */
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.styled-list {
+.nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;
-    padding: 0;
-}
-
-.styled-list li a {
-    text-decoration: none;
-    background-color: #555;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-/* Button hover effect */
-.styled-list li a:hover {
-    background-color: #534080;
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Main content styling */
-main {
-    width: 100%;
-    max-width: 1200px;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* Social links section */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
 }
 
-.social-links .styled-list {
-    flex-direction: column;
-    gap: 20px;
-}
-
-.social-link a {
-    color: #fff;
+.nav-menu li a {
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #9A789D;
+}
+
+/* Hero Section */
+.hero {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    background-color: #333;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 18px;
-    width: 250px;
-    transition: background-color 0.3s;
-}
-
-/* Social link hover effect */
-.social-link a:hover {
-    background-color: #534080;
-}
-
-.social-link img {
-    width: 24px;
-    height: 24px;
-}
-
-/* Footer styling */
-footer {
+    height: 80vh;
     width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 30px 20px;
+    background: linear-gradient(to bottom, #1f1f1f, #121212);
     text-align: center;
-    border-top: 3px solid #534080;
-    font-size: 14px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.updates-and-links {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap; /* Allows stacking on smaller screens */
-    flex-direction: column;
-}
-
-.recent-updates {
-    flex: 2; /* Takes up more space compared to social links */
-    display: flex;
-    flex-direction: column; /* Ensures updates stack vertically */
-    gap: 20px;
-    background-color: #222;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.social-links {
-    flex: 1; /* Takes up less space */
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.recent-updates h2, .social-links h2 {
-    font-size: 24px;
-    color: #534080;
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #9A789D;
     margin-bottom: 20px;
 }
 
-.recent-updates ul, .social-links ul {
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Recent Updates */
+.recent-updates, .social-links {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.recent-updates h2, .social-links h2 {
+    color: #9A789D;
+    margin-bottom: 15px;
+}
+
+.recent-updates ul {
     list-style: none;
+    text-align: left;
     padding: 0;
 }
 
 .recent-updates li {
-    display: flex;
-    gap: 10px;
-    font-size: 16px;
-    color: #ddd;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
 }
 
-.recent-updates li p {
-    margin: 0;
-    line-height: 1.5;
+.recent-updates li:last-child {
+    border-bottom: none;
 }
 
-.recent-updates li a {
-    color: #ffffff;
-    font-weight: bold;
-}
-
-.recent-updates li a:hover {
+.recent-updates a {
+    color: #9A789D;
     text-decoration: none;
-    color: #fff;
+    font-weight: 600;
 }
 
-.social-links li a {
-    font-size: 16px;
-    color: #ddd;
+.recent-updates a:hover {
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-icons {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-.social-links li a:hover {
+.social-icon {
     color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #9A789D;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #ccc;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        font-size: 20px;
-        padding: 15px 10px;
-    }
-
-    .profile-pic img {
-        width: 120px; /* Smaller profile picture on tablets */
-        height: 120px;
-    }
-
-    .styled-list li a {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .social-link a {
-        font-size: 16px;
-        padding: 10px 15px;
-    }
-
-    footer {
-        font-size: 12px;
-    }
-
-    /* Make navigation stack vertically on smaller tablets */
-    nav .styled-list {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+        padding: 15px;
     }
-
-    .recent-updates h2 {
-        font-size: 20px;
-    }
-
-    .updates-list li h3 {
-        font-size: 16px;
-    }
-
-    .updates-list li p {
-        font-size: 12px;
-    }
-
-    .updates-and-links {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        flex-wrap: wrap; /* Allows stacking on smaller screens */
-    }
-    
-    .recent-updates {
-        flex: 2; /* Takes up more space compared to social links */
-        display: flex;
-        flex-direction: column; /* Ensures updates stack vertically */
-        gap: 20px;
-        background-color: #222;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .social-links {
-        flex: 1; /* Takes up less space */
-        background-color: #222;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .recent-updates h2, .social-links h2 {
-        font-size: 24px;
-        color: #534080;
-        margin-bottom: 20px;
-    }
-    
-    .recent-updates ul, .social-links ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .recent-updates li {
-        display: flex;
+    .nav-menu {
         flex-direction: column;
-        gap: 10px;
-        font-size: 16px;
-        color: #ddd;
-    }
-    
-    .recent-updates li p {
-        margin: 0;
-        line-height: 1.5;
-    }
-    
-    .recent-updates li a {
-        color: #534080;
-        font-weight: bold;
-        text-decoration: underline;
-    }
-    
-    .recent-updates li a:hover {
-        text-decoration: none;
-        color: #fff;
-    }
-    
-    .social-links li a {
-        font-size: 16px;
-        color: #ddd;
-        display: flex;
         align-items: center;
         gap: 10px;
-        text-decoration: none;
     }
-    
-    .social-links li a:hover {
-        color: #fff;
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        font-size: 18px;
-        padding: 10px;
+    .profile-pic {
+        width: 120px;
+        height: 120px;
     }
-
-    .profile-pic img {
-        width: 100px; /* Even smaller profile picture for mobile */
-        height: 100px;
+    .hero h2 {
+        font-size: 1.5rem;
     }
-
-    .styled-list li a {
-        padding: 8px 15px;
-        font-size: 12px;
-    }
-
-    .social-link a {
-        font-size: 14px;
-        padding: 8px 10px;
-        width: 200px;
-    }
-
-    footer {
-        font-size: 10px;
-    }
-
-    /* Make navigation stack vertically on mobile */
-    nav .styled-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* Stack social links */
-    .social-links .styled-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .recent-updates {
-        padding: 15px;
-    }
-
-    .updates-list li {
-        padding: 10px;
-    }
-
-    .recent-updates h2, .social-links h2 {
-        font-size: 20px;
-    }
-
-    .recent-updates li p {
-        font-size: 14px;
-    }
-
-    .social-links li a {
-        font-size: 14px;
+    .hero p {
+        font-size: 0.9rem;
     }
 }
