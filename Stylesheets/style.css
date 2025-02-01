@@ -73,12 +73,11 @@ header {
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 100%;
-    max-width: 100vw;
     background: linear-gradient(to bottom, #1f1f1f, #121212);
     text-align: center;
     padding: 40px 20px;
-    overflow-x: hidden;
+    width: 100%;
+    padding: 40px 20px;
 }
 
 .profile-pic {
@@ -120,6 +119,9 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
     .profile-pic {
         width: 130px;
         height: 130px;
