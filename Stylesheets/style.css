@@ -1,148 +1,194 @@
-/* Reset Styles */
-body, h1, h2, p, ul, li, a {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --dark-gray: #1a1a1a;
+  --medium-gray: #2a2a2a;
+  --light-gray: #e0e0e0;
+  --light-purple: #9b4dca;  /* Lighter shade of purple */
+  --purple-accent: #6a0dad;
+  --hover-color: #8b00ff;   /* Brighter accent for hover effects */
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding-top: 70px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); /* Simplified gradient */
+  color: var(--light-gray); /* Light gray for text */
+  line-height: 1.6;
+  transition: background 0.5s ease-in-out;
 }
 
-/* Header Styling */
 header {
-    width: 100%;
-    background-color: #1f1f1f;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding-right: 20px;
-    flex-wrap: wrap;
-}
-
-.nav-menu li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.nav-menu li a:hover {
-    color: #9A789D;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-menu {
-        flex-direction: column;
-        padding: 10px 0;
-        gap: 10px;
-    }
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background: linear-gradient(to bottom, #1f1f1f, #121212);
-    text-align: center;
-    padding: 40px 20px;
-    width: 100%;
-    padding: 40px 20px;
+  text-align: center;
+  padding: 20px;
+  background: transparent;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #9A789D;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--light-purple); /* Lighter purple accent */
+  transition: transform 0.3s ease-in-out;
 }
 
 .profile-pic:hover {
-    transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Main Content Centering */
+.profile-section h1 {
+  font-size: 3rem;
+  margin: 10px 0 0 0;
+  color: var(--light-purple); /* Lighter purple accent */
+  transition: color 0.3s ease-in-out;
+}
+
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    overflow-x: hidden;
+  padding: 20px;
 }
 
-.recent-updates, .social-links {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+.updates {
+  margin: 30px 0;
+}
+
+.updates h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--light-purple); /* Lighter purple accent */
+}
+
+.updates-list {
+  list-style: none;
+  padding: 0;
+  display: block;
+}
+
+.update-item a {
+  display: block;
+  padding: 20px;
+  background: rgba(26, 26, 26, 0.8); /* Semi-transparent for depth */
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: var(--light-gray);
+}
+
+.update-item a:hover {
+  background-color: var(--hover-color); /* Brighter purple accent for hover */
+  color: white;
+  transform: scale(1.05);
+}
+
+.buttons-section {
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  gap: 15px; /* Space between the buttons */
+  align-items: center; /* Center-align the buttons */
+}
+
+
+.nav-button {
+  padding: 15px 30px;
+  background-color: rgba(26, 26, 26, 0.8);
+  color: var(--light-gray);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--hover-color); /* Brighter accent on hover */
+  color: white;
+  transform: scale(1.05);
+}
+
+.social-links {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.social-links h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--light-purple); /* Lighter purple accent */
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-links a {
+  color: var(--light-gray); /* Standard gray for links */
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--hover-color); /* Brighter accent for hover */
+  transform: scale(1.1);
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between the sections */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.updates-container, .buttons-container {
+  flex: 1; /* Ensures both containers take equal space */
+  min-width: 250px; /* Minimum width for each container */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: transparent;
+  color: var(--light-purple); /* Lighter purple accent */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        font-size: 0.9rem;
-    }
-    .profile-pic {
-        width: 130px;
-        height: 130px;
-    }
-    main {
-        width: 95%;
-        padding: 15px;
-    }
-}
+  .updates-list {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-@media (max-width: 480px) {
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-    main {
-        width: 100%;
-        padding: 10px;
-    }
-    .hero, main, .recent-updates, .social-links {
-        width: 100%;
-        max-width: 100vw;
-    }
+  .buttons-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-button {
+    width: 80%;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .content-container {
+    flex-direction: column; /* Stacks the sections vertically on smaller screens */
+  }
+
+  .updates-container, .buttons-container {
+    flex: none; /* Removes the equal space allocation */
+    min-width: auto; /* Resets the minimum width */
+  }
 }
