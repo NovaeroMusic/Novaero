@@ -2,89 +2,110 @@
 <html lang="en">
 <head>
     <title>Novaero's Poetry</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the world of poetry with Novaero. Discover a collection of poems, read excerpts, and delve into the depths of lyrical expression."> 
     <meta name="keywords" content="poetry, poems, poet, Novaero, literature, words, art, creative writing, verse, lyrical, prose, expression">
     <meta name="author" content="Novaero">
-    
     <link rel="stylesheet" href="Stylesheets/poetry.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
-</head>
+    </head>
 <body>
-    <header>
+    <nav>
+        <div class="logo">Novaero</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="playlists.html">Playlist</a></li>
+            <li><a href="poetry.html" class="active">Poetry</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
         <h1>Novaero's Poetry</h1>
+        <p>Dive into the lyrical depths and rhythmic echoes of Novaero's soul.</p>
     </header>
 
-    <main class="album-page">
-        <!-- Phantom's Promise -->
-        <section class="album-item">
-            <div class="album-cover">
-                <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover">
-            </div>
-            <div class="album-info">
-                <h2>Phantom's Promise</h2>
-                <p>
-                    <strong>Author:</strong> Novaero
-                    <br>
-                    <strong>Genre:</strong> Poetry
-                    <br>
-                    <strong>Publication Year:</strong> December 2024
-                    <br>
-                    <strong>ISBN:</strong> N/A
-                </p>
-                <p>
-                    <strong>Excerpt:</strong>
-                    <p>     torn apart like the pieces of a paper
-                        <br>can't depart from the gruesome enslaver
-                        <br>box of thoughts and memories collected
-                        <br>leaving souls indulged infected</p>
-                </p>
-                <ul class="styled-list">
-                    <li>
-                        <a href="books/Phantom's Promise.pdf" download>Download</a>
-                    </li>
+    <main class="poetry-content">
+        <section class="books-section">
+            <h2>Published Poetry Books</h2>
+            <ul class="book-list">
+                <li class="book-item">
+                    <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover" class="book-cover">
+                    <div class="book-details">
+                        <h3>Phantom's Promise</h3>
+                        <p>Author: Novaero</p>
+                        <p>Published: December 2024</p>
+                        <a href="books/Phantom's Promise.pdf" download class="download-btn">Download</a>
+                    </div>
+                </li>
                 </ul>
-            </div>
         </section>
 
-        <!-- FOR FUTURE USE -->
-        <!--
-        <section class="album-item">
-            <div class="album-cover">
-                <img src="images/imagepath" alt="Book Title Cover">
-            </div>
-            <div class="album-info">
-                <h2>Book Title</h2>
-                <p>
-                    <strong>Author:</strong> Novaero
-                    <br>
-                    <strong>Genre:</strong> Poetry
-                    <br>
-                    <strong>Publication Year:</strong> date
-                    <br>
-                    <strong>ISBN:</strong> N/A
-                </p>
-                <p>
-                    <strong>Excerpt:</strong>
-                    <br>[Insert a short excerpt from the book's poem]
-                </p>
-                <ul class="styled-list">
-                    <li>
-                        <a href="books/filepath" download>Download</a>
-                    </li>
-                </ul>
-            </div>
+        <section class="poems-section">
+            <h2>Single Poems</h2>
+
+            <input type="text" id="poemSearch" placeholder="Search poems...">
+
+            <ul class="poem-list">
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/18095054-Novaero-XXI-by-Novaero" target="_blank">Novaero XXI</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/18059598-Illuminate-by-Novaero" target="_blank">Illuminate</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17942383-how-many-more-years-by-Novaero" target="_blank">how many more years</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17487962-In-the-dance-of-redemption-by-Novaero" target="_blank">In the dance of redemption</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17455194-Fatal-blow-by-Novaero" target="_blank">Fatal blow</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17428985-M.C.-by-Novaero/" target="_blank">M.C.</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17299367-f.f.-by-Novaero/" target="_blank">f.f.</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17342886-Whispers-of-Unseen-Echoes-by-Novaero" target="_blank">Whispers of Unseen Echoes</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17247953-kaizen-by-Novaero" target="_blank">kaizen</a>
+                </li>
+                <li class="poem-item">
+                    <a href="https://allpoetry.com/poem/17235290-Harmonica-by-Novaero" target="_blank">Harmonica</a>
+                </li>
+            </ul>
         </section>
-        -->
     </main>
 
     <footer>
-        <p>&copy; 2025 Novaero</p>
     </footer>
+
+    <script>
+        const poemSearch = document.getElementById('poemSearch');
+        const poemList = document.querySelector('.poem-list');
+        const poemItems = poemList.querySelectorAll('.poem-item'); // Get all list items
+
+        poemSearch.addEventListener('input', (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+
+            poemItems.forEach(item => {
+                const poemTitle = item.querySelector('a').textContent.toLowerCase();
+                if (poemTitle.includes(searchTerm)) {
+                    item.style.display = 'block'; // Show the item
+                } else {
+                    item.style.display = 'none'; // Hide the item
+                }
+            });
+        });
+    </script>
 </body>
 </html>
