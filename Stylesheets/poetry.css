@@ -1,182 +1,405 @@
-/* Resetting the CSS for a modern poetic design */
-body, h1, h2, h3, p, ul, li {
+/* Base Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Darker background to match the aesthetic */
-    color: #fff;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #e0e0e0;
     overflow-x: hidden;
-    padding-top: 80px;
 }
 
-header {
-    width: 100%;
-    background-color: #534080; /* Consistent background color */
-    color: #fff;
-    padding: 2px 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+:root {
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --primary-color: #bf00ff;
 }
 
-header:hover {
-    background-color: #4a3455;
-}
-
-.album-page {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Grid layout for books */
-    gap: 30px;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.album-item {
+/* Navigation Bar */
+nav {
     display: flex;
     justify-content: space-between;
-    background-color: #1e1e1e;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    padding: 20px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
+    align-items: center;
+    padding: var(--spacing-medium);
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
-.album-cover {
-    flex: 1;
-    padding-right: 20px;
-    min-width: 0;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-medium);
+    margin: 0;
+    padding: 0;
 }
 
-.album-cover img {
-    max-width: 100%;
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: var(--spacing-medium);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.8);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: var(--spacing-medium) 0;
+}
+
+/* Books and Poems Sections */
+.books-section, .poems-section {
+    padding: var(--spacing-large);
+    background: #222;
+    text-align: center;
+}
+
+.books-section h2, .poems-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+.book-list, .poem-list {
+    list-style: none;
+    padding: 0;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.book-item {
+    display: flex;
+    align-items: flex-start;
+    background: #333;
+    padding: var(--spacing-medium);
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    gap: var(--spacing-medium);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.book-cover {
+    max-width: 140px;
+    height: auto;
+    border-radius: 5px;
     object-fit: cover;
 }
 
-.album-cover img:hover {
-    transform: scale(1.05); /* Zoom effect for book covers */
-}
-
-.album-info {
-    flex: 2;
-    padding: 20px;
+.book-details {
+    flex-grow: 1;
     text-align: left;
-    color: #bbb;
-    min-width: 0;
 }
 
-.album-info h2 {
-    font-size: 24px;
+.book-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.book-details p {
+    margin: var(--spacing-small) 0;
+    font-size: 1.0rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--primary-color);
     color: #fff;
-    margin-bottom: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: var(--spacing-small);
+    font-size: 0.9rem;
 }
 
-.album-info p {
-    font-size: 16px;
-    margin-bottom: 18px;
+.download-btn i {
+    margin-right: 5px;
 }
 
-.styled-list {
+.download-btn:hover {
+    background: #9a00cc;
+    transform: scale(1.1);
+}
+
+
+.poem-list {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+    /* Remove flexbox properties */
+    display: block; /* or display: inline */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    max-height: 400px; /* Set a maximum height for the list (adjust as needed) */
+    border: 1px solid #555; /* Optional border for visual separation */
+    border-radius: 8px; /* Optional border radius */
+    overflow-y: auto;
+    max-height: 400px;
+    border: 1px solid #555; /* Optional border */
+    border-radius: 8px;
+
+    /* WebKit (Chrome, Safari) Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px; /* Adjust width as needed */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #444; /* Track background color */
+        border-radius: 4px; /* Rounded track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-color); /* Thumb color */
+        border-radius: 4px; /* Rounded thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #9a00cc; /* Thumb hover color */
+    }
+
+    /* Firefox Scrollbar Styling (More limited) */
+    scrollbar-color: var(--primary-color) #444; /* Thumb and track colors */
+    scrollbar-width: thin; /* Thin, auto, or thick */
 }
 
-.styled-list a {
+.poem-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-small); /* Space between items */
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.poem-item:hover {
+    background: #3a3a3a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.poem-item a {
+    color: var(--primary-color);
     text-decoration: none;
-    background-color: #4a3455;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: color 0.3s;
+    display: block;
+    text-align: center; /* Center the text within the list item */
 }
 
-.styled-list a:hover {
-    background-color: #6449a3;
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+.poem-item a:hover {
+    color: #ffffff;
 }
 
-footer {
+/* Style the search input */
+#poemSearch {
     width: 100%;
-    background-color: #222;
-    color: white;
-    padding: 30px 20px;
+    padding: 10px;
+    margin-bottom: var(--spacing-medium);
+    box-sizing: border-box;
+    border: 1px solid #555; /* Slightly lighter border */
+    background-color: #444; /* Darker background */
+    color: #eee; /* Lighter text color */
+    border-radius: 5px;
+}
+
+#poemSearch:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(191, 0, 255, 0.3); /* Subtle glow on focus */
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: var(--spacing-medium);
     text-align: center;
-    border-top: 3px solid #534080;
-    font-size: 14px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--primary-color);
+}
+
+::-webkit-scrollbar {
+    width: 8px; /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+    background: #444; /* Track background color */
+    border-radius: 4px; /* Rounded track (optional) */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Thumb color */
+    border-radius: 4px; /* Rounded thumb (optional) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9a00cc; /* Thumb hover color */
+}
+
+/* General Scrollbar Styling for Firefox */
+* { /* Apply to all elements */
+    scrollbar-color: var(--primary-color) #444; /* Thumb and track colors */
+    scrollbar-width: thin; /* thin, auto, or thick */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        font-size: 20px;
-        padding: 15px 10px;
+@media (min-width: 768px) { /* Tablet and larger */
+    nav ul {
+        flex-direction: row; /* Restore horizontal navigation */
+        width: auto;
     }
 
-    .album-page {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .hero {
+        height: 70vh; /* Adjust as needed */
     }
 
-    .album-info h2 {
-        font-size: 18px;
+    .hero h1 {
+        font-size: 3rem;
     }
 
-    .styled-list a {
-        padding: 8px 20px;
-        font-size: 14px;
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax as needed */
+    }
+
+    .updates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) { /* Desktop and larger */
+    nav {
+        padding: var(--spacing-medium);
+    }
+
+    .hero {
+        height: 80vh; /* Adjust as needed */
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax as needed */
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        font-size: 18px;
-        padding: 10px;
+    body {
+        font-size: 14px; /* Slightly smaller base font */
     }
 
-    .album-page {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    nav {
+        padding: 10px; /* Reduced padding */
     }
 
-    .album-info h2 {
-        font-size: 16px;
+    nav ul {
+        gap: 5px; /* Reduced gap */
     }
 
-    .styled-list a {
-        padding: 6px 15px;
-        font-size: 12px;
+    .hero {
+        height: 50vh; /* Adjust height */
+        padding: 10px; /* Reduced padding */
     }
 
-    .album-cover img {
-        width: 100%;
+    .hero h1 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Smaller paragraph size */
+        margin: 10px 0; /* Reduced margin */
+    }
+
+    .books-section,
+    .poems-section,
+    .updates {
+        padding: 20px; /* Reduced padding */
+    }
+
+    .books-section h2,
+    .poems-section h2,
+    .updates h2 {
+        font-size: 1.2rem; /* Smaller headings */
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller minmax */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .book-item {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .book-details h3 {
+        font-size: 1rem; /* Smaller heading */
+    }
+
+    .book-details p {
+        font-size: 0.8rem; /* Smaller paragraph size */
+    }
+
+    .download-btn {
+        font-size: 0.8rem; /* Smaller button font */
+        padding: 6px 10px; /* Smaller button padding */
+    }
+
+
+    .poem-list {
+        max-height: 400px; /* Adjust as needed */
+    }
+
+    .poem-item {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .updates-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .update-item {
+        padding: 10px; /* Reduced padding */
+    }
+
+    footer {
+        padding: 10px; /* Reduced padding */
+        font-size: 0.8rem; /* Smaller font size */
     }
 }
+
