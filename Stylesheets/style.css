@@ -8,6 +8,13 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 30px;
+  --primary-color: #bf00ff;
+}
+
 /* Navigation Bar */
 nav {
   display: flex;
@@ -136,6 +143,30 @@ footer {
   padding: 20px;
   text-align: center;
   color: #bf00ff;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #444; /* Track background color */
+  border-radius: 4px; /* Rounded track (optional) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); /* Thumb color */
+  border-radius: 4px; /* Rounded thumb (optional) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9a00cc; /* Thumb hover color */
+}
+
+/* General Scrollbar Styling for Firefox */
+* { /* Apply to all elements */
+  scrollbar-color: var(--primary-color) #444; /* Thumb and track colors */
+  scrollbar-width: thin; /* thin, auto, or thick */
 }
 
 /* Animations */
