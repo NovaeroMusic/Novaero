@@ -1,143 +1,264 @@
-/* Reset some default styling for a clean slate */
-* {
+/* Base Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* General body styling */
-body {
     font-family: 'Arial', sans-serif;
-    background-color: #1e1e1e; /* Dark background for a sleek look */
-    color: #eaeaea; /* Light text for contrast */
-    line-height: 1.6;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
-header {
-    width: 100%;
-    background-color: #534080; /* Keep the original background color */
-    color: #fff;
-    padding: 2px 20px; /* Smaller padding for a more compact header */
-    text-align: center;
-    font-size: 24px; /* Smaller font size */
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for subtle depth */
-    position: fixed; /* Keeps the header fixed at the top of the page */
-    top: 0;
-    left: 0;
-    right: 0;
+:root {
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --primary-color: #bf00ff;
+    --secondary-color: #9a00cc;
+    --background-dark: #333;
+    --text-light: #ffffff;
 }
 
-header:hover {
-    background-color: #4a3455; /* Hover effect */
-}
-
-/* Main container for the content */
-main {
-    padding: 20px;
+/* Navigation Bar */
+nav {
     display: flex;
-    flex-direction: column; /* Stack the sections vertically */
-    align-items: center; /* Center the content horizontally */
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-medium);
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
-/* Each playlist section styling */
-.book {
-    width: 70%; /* Reduced width for smaller size */
-    max-width: 800px; /* Maximum width for large screens */
-    margin: 15px 0; /* Reduced vertical spacing between sections */
-    padding: 15px; /* Reduced padding */
-    background-color: #2d2d2d; /* Slightly lighter dark background for sections */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+nav .logo {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-medium);
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--text-light);
+}
+
+/* Header */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url('hero-background.jpg') no-repeat center center/cover;
     text-align: center;
-    transition: transform 0.3s ease;
+    padding: var(--spacing-medium);
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Hover effect for each section */
-.book:hover {
-    transform: translateY(-10px);
+/* Header Section */
+header.hero {
+    background: #222;
+    text-align: center;
+    padding: var(--spacing-large);
+    color: var(--primary-color);
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
 }
 
-/* Title for each playlist */
-.book h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #ffffff;
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--primary-color);
+    opacity: 0;
+    animation: fadeIn 2s forwards 0.5s; /* Slight delay for h1 */
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.8);
 }
 
-/* Information about each playlist */
-.book-info {
-    margin-bottom: 15px;
+header p {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-small);
+    color: var(--text-light);
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s; /* Slight delay for the paragraph */
 }
 
-/* Cover image inside each playlist */
-.book-cover {
-    margin-top: 15px;
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.book-cover img {
-    width: 80%; /* Set the width to 80% of the container */
-    max-width: 500px; /* Limit the maximum width of the image */
-    height: auto; /* Maintain the aspect ratio */
-    display: block; /* Ensure the image is block level for better layout */
-    margin: 0 auto; /* Center the image horizontally */
+
+/* Playlists Section */
+.album-page {
+    padding: var(--spacing-large);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
 }
 
-/* Styled list for the Listen Now links */
-.styled-list {
-    list-style-type: none;
-    margin-top: 15px;
+.album-item {
+    background: var(--background-dark);
+    padding: var(--spacing-medium);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
-.styled-list li {
-    margin-bottom: 10px;
+.album-cover img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: var(--spacing-small);
+    object-fit: cover;
+}
+
+.album-info {
+    padding: var(--spacing-small);
+}
+
+.album-info h2 {
+    margin: var(--spacing-small) 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.album-info p {
+    margin: var(--spacing-small) 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 .styled-list a {
+    display: inline-block;
+    margin-top: var(--spacing-small);
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: var(--text-light);
     text-decoration: none;
-    background-color: #4a3455; /* Dark button style */
-    color: #fff;
-    padding: 12px 30px; /* Bigger buttons for emphasis */
-    border-radius: 30px; /* Larger rounded corners */
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .styled-list a:hover {
-    background-color: #6449a3; /* Hover effect */
-    transform: scale(1.05); /* Slightly bigger on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    background: var(--secondary-color);
+    transform: scale(1.1);
 }
 
+.roman-numerals {
+    font-family: 'Times New Roman', serif; /* A classic serif font */
+    letter-spacing: 1px; /* Adds space between letters for a more 'Roman' appearance */
+}
+
+/* Footer */
 footer {
-    width: 100%;
-    background-color: #222;
-    color: white;
-    padding: 30px 20px;
+    background: #111;
+    padding: var(--spacing-medium);
     text-align: center;
-    border-top: 3px solid #534080;
-    font-size: 14px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--primary-color);
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .book {
-        width: 85%;
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+* {
+    scrollbar-color: var(--primary-color) #444;
+    scrollbar-width: thin;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        width: auto;
     }
 
-    .book-cover img {
-        width: 70%; /* Make the image smaller on tablet-sized screens */
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .album-page {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
-    .book {
-        width: 95%; /* Adjust width for mobile */
+    body {
+        font-size: 14px;
     }
 
-    .book-cover img {
-        width: 60%; /* Further reduce the image size on mobile screens */
+    nav {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .album-page {
+        grid-template-columns: 1fr;
+    }
+
+    .album-item {
+        padding: 10px;
+    }
+
+    .album-cover img {
+        max-width: 150px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
