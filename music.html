@@ -3,67 +3,29 @@
 <head>
     <title>Novaero Discography</title>
     <meta charset="UTF-8">
-    <meta name="title" content="Novaero Discography & Playlists - Curated Cosmic Beats and Ethereal Soundscapes">
-    <meta name="description" content="Explore Novaero's discography and curated playlists, featuring cosmic beats, ethereal soundscapes, and atmospheric rhythms. Discover Novaero’s latest EP and dive into the universe of indie music that blends spacey vibes with deep melodies.">
-    <meta name="keywords" content="Novaero, Novaero discography, Novaero albums, Novaero music, cosmic beats, ethereal soundscapes, indie artist music, Novaero playlists, curated music, Novaero EP, Novaero rhythm vibes, space music, ambient beats, atmospheric soundscapes">
-    <meta name="author" content="Novaero">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Novaero Playlists - Curated Sounds and Timeless Vibes">
+    <meta name="description" content="Explore Novaero's playlists—curated music and rhythms that capture the essence of Novaero's universe, with deep beats and ethereal soundscapes.">
+    <meta name="keywords" content="Novaero, playlists, music, beats, soundscapes, rhythmic vibes, ethereal music, curated sounds, cosmic rhythms, songs, playlists on YouTube">    <meta name="author" content="Novaero">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://novaero.com/playlists.html">
-    <meta property="og:title" content="Novaero Discography & Playlists - Curated Cosmic Beats and Ethereal Soundscapes">
-    <meta property="og:description" content="Discover Novaero's curated playlists and discography—cosmic beats, ethereal rhythms, and the latest in space music. Listen now.">
-    <meta property="og:image" content="https://novaero.com/images/NVSWAscension_large.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Novaero Playlists - Curated Sounds and Timeless Vibes">
+    <meta property="og:description" content="Discover Novaero's playlists—soundscapes and beats designed to transport you to another universe of rhythm and vibes.">
+    <meta property="og:image" content="https://novaero.com/images/NVSWAscension.jpg">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://novaero.com/playlists.html">
-    <meta name="twitter:title" content="Novaero Discography & Playlists - Curated Cosmic Beats and Ethereal Soundscapes">
-    <meta name="twitter:description" content="Explore Novaero's playlists filled with cosmic beats, indie rhythms, and spacey soundscapes that take you on a journey through sound.">
-    <meta name="twitter:image" content="https://novaero.com/images/NVSWAscension_large.jpg">
+    <meta name="twitter:title" content="Novaero Playlists - Curated Sounds and Timeless Vibes">
+    <meta name="twitter:description" content="Explore Novaero's playlists filled with cosmic beats and melodies designed to take you on a journey through sound.">
+    <meta name="twitter:image" content="https://novaero.com/images/NVSWAscension.jpg">
+
     <!-- Additional Meta Tags for SEO -->
     <meta name="theme-color" content="#bf00ff">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="rating" content="General">
-
-    <script type="application/ld+json">
-        {
-          "@context": "http://schema.org",
-          "@type": "MusicPlaylist",
-          "name": "Novaero Discography & Playlists",
-          "url": "https://novaero.com/playlists.html",
-          "description": "Explore Novaero's discography and curated playlists, featuring cosmic beats, ethereal soundscapes, and atmospheric rhythms. Discover Novaero’s latest EP and dive into the universe of indie music that blends spacey vibes with deep melodies.",
-          "image": "https://novaero.com/images/NVSWAscension_large.jpg",
-          "creator": {
-            "@type": "MusicGroup",
-            "name": "Novaero"
-          },
-          "track": [
-            {
-              "@type": "MusicRecording",
-              "name": "Star Light",
-              "url": "https://novaero.com/Albums/StarLight.html",
-              "duration": "PT3M20S",
-              "releaseDate": "2025-01-03"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "Phantom's Promise",
-              "url": "https://novaero.com/Albums/PhantomsPromise.html",
-              "duration": "PT4M00S",
-              "releaseDate": "2024-12-05"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "Silent Tears of A Mother",
-              "url": "https://novaero.com/Albums/SilentTears.html",
-              "duration": "PT3M10S",
-              "releaseDate": "2024-08-18"
-            }
-          ]
-        }
-    </script>        
 
     <link rel="stylesheet" href="Stylesheets/music.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -90,69 +52,58 @@
         <p>Curated sounds, timeless vibes, and the rhythm of Novaero's universe.</p>
     </header>
 
-    <!-- Search Bar -->
     <div class="search-container">
-        <input type="text" id="albumSearch" placeholder="Search albums..." oninput="filterAlbums()">
-    </div>
+        <input type="text" id="searchBar" placeholder="Search for an album..." onkeyup="searchAlbums()">
+    </div>    
 
     <!-- Playlists Section -->
-    <section class="album-page" id="albumPage">
-        <!-- Repeatable Album Item Example -->
+    <section class="album-page">
         <div class="album-item">
             <div class="album-cover">
                 <img src="images/StarLightAlbumCoverOfficial.jpg" alt="Star Light Cover">
             </div>
             <div class="album-info">
                 <h2>Star Light</h2>
-                <p><strong>Artist:</strong> Novaero</p>
                 <p><strong>Project Type:</strong> EP</p>
-                <p><strong>Song Count:</strong> 3</p>
-                <p><strong>Released:</strong> January 3, 2025</p>
+                <p><strong>Release Date:</strong> January 3, 2025</p>
+                <p><strong>Track count:</strong> 3</p>
                 <div class="styled-list">
-                    <a href="Albums/StarLight.html">
-                        View Album <i class="fas fa-record-vinyl"></i>
-                    </a>
+                    <a href="" target="_blank">View Album <i class="fas fa-compact-disc"></i></a>
                 </div>
             </div>
         </div>
-        
+
         <div class="album-item">
             <div class="album-cover">
                 <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover">
             </div>
             <div class="album-info">
                 <h2>Phantom's Promise</h2>
-                <p><strong>Artist:</strong> Novaero</p>
                 <p><strong>Project Type:</strong> LP</p>
-                <p><strong>Song Count:</strong> 7</p>
-                <p><strong>Released:</strong> December 5, 2024</p>
+                <p><strong>Release Date:</strong> December 5, 2024</p>
+                <p><strong>Track count:</strong> 7</p>
                 <div class="styled-list">
-                    <a href="Albums/StarLight.html">
-                        View Album <i class="fas fa-record-vinyl"></i>
-                    </a>
+                    <a href="" target="_blank">View Album <i class="fas fa-compact-disc"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="album-item">
             <div class="album-cover">
-                <img src="images/Novaero 2027.jpg" alt="Silent Tears of a Mother Cover">
+                <img src="images/Novaero 2027.jpg" alt="Silent Tears of A Mother Cover">
             </div>
             <div class="album-info">
                 <h2>Silent Tears of A Mother</h2>
-                <p><strong>Artist:</strong> Novaero</p>
                 <p><strong>Project Type:</strong> EP</p>
-                <p><strong>Song Count:</strong> 3</p>
-                <p><strong>Released:</strong> August 18, 2024</p>
+                <p><strong>Release Date:</strong> August 18, 2024</p>
+                <p><strong>Track count:</strong> 3</p>
                 <div class="styled-list">
-                    <a href="Albums/StarLight.html">
-                        View Album <i class="fas fa-record-vinyl"></i>
-                    </a>
+                    <a href="" target="_blank">View Album <i class="fas fa-compact-disc"></i></a>
                 </div>
             </div>
         </div>
     </section>
-
+        
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Novaero. All Rights Reserved.</p>
@@ -160,16 +111,16 @@
     </footer>
 
     <script>
-        function filterAlbums() {
-            const searchQuery = document.getElementById('albumSearch').value.toLowerCase();
-            const albumItems = document.querySelectorAll('.album-item');
-            
-            albumItems.forEach(item => {
-                const albumTitle = item.querySelector('h2').textContent.toLowerCase();
-                if (albumTitle.includes(searchQuery)) {
-                    item.style.display = '';
+        function searchAlbums() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let albums = document.querySelectorAll(".album-item");
+
+            albums.forEach(album => {
+                let title = album.querySelector("h2").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    album.style.display = "flex"; // Show matching albums
                 } else {
-                    item.style.display = 'none';
+                    album.style.display = "none"; // Hide non-matching albums
                 }
             });
         }
