@@ -55,6 +55,30 @@ nav a:hover {
     color: var(--text-light);
 }
 
+.search-container {
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+#searchBar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: #222;
+    color: var(--text-light);
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchBar:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+
 /* Header */
 .hero {
     display: flex;
@@ -105,11 +129,12 @@ header p {
     }
 }
 
+
 /* Playlists Section */
 .album-page {
     padding: var(--spacing-large);
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Only 2 albums per row */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-medium);
 }
 
@@ -118,66 +143,57 @@ header p {
     padding: var(--spacing-medium);
     border-radius: 10px;
     display: flex;
-    align-items: center; /* Align items in the center vertically */
+    flex-direction: column;
+    align-items: center;
     transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-    text-align: left; /* Align text to the left */
-    margin-bottom: 0; /* Remove vertical spacing between album items */
-}
-
-.album-cover {
-    flex: 1;
-    margin-right: var(--spacing-medium); /* Adds space between album cover and text */
+    text-align: center;
 }
 
 .album-cover img {
-    width: 100%;
+    width: 80%;
     max-width: 200px;
     height: auto;
     border-radius: 10px;
+    margin-bottom: var(--spacing-small);
     object-fit: cover;
 }
 
 .album-info {
-    flex: 2;
     padding: var(--spacing-small);
 }
 
 .album-info h2 {
-    margin: 0;
+    margin: var(--spacing-small) 0;
     color: var(--primary-color);
-    font-size: 1.4rem; /* Increased font size */
+    font-size: 1.2rem;
     line-height: 1.3;
 }
 
 .album-info p {
-    margin: 0; /* Remove vertical spacing between texts */
-    line-height: 1.6;
-    font-size: 1rem; /* Adjusted font size */
-    color: var(--text-light);
+    margin: var(--spacing-small) 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
-/* Hover effect on View Album link */
 .styled-list a {
     display: inline-block;
-    margin-top: var(--spacing-medium);
-    padding: 10px 20px;
+    margin-top: var(--spacing-small);
+    padding: 8px 16px;
     background: var(--primary-color);
     color: var(--text-light);
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.1rem; /* Increased font size */
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .styled-list a:hover {
     background: var(--secondary-color);
-    transform: scale(1.05); /* Slight scaling effect */
-    box-shadow: 0 0 15px rgba(191, 0, 255, 0.8); /* Subtle shadow effect */
+    transform: scale(1.1);
 }
 
-.styled-list a i {
-    margin-left: 10px; /* Adds space between text and icon */
-    font-size: 1.3rem; /* Increases icon size */
+.roman-numerals {
+    font-family: 'Times New Roman', serif; /* A classic serif font */
+    letter-spacing: 1px; /* Adds space between letters for a more 'Roman' appearance */
 }
 
 /* Footer */
@@ -211,40 +227,9 @@ footer {
     scrollbar-width: thin;
 }
 
-/* Search Bar Styles */
-.search-container {
-    display: flex;
-    justify-content: center; /* Centers the search bar horizontally */
-    align-items: center;     /* Centers the search bar vertically */
-    margin-top: 30px;        /* Adds space from the header */
-    padding: var(--spacing-small);
-}
-
-#albumSearch {
-    width: 100%;
-    max-width: 500px; /* Limits the width of the search bar */
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid var(--primary-color);
-    border-radius: 20px;
-    background: #333;
-    color: var(--text-light);
-    transition: all 0.3s ease;
-}
-
-#albumSearch::placeholder {
-    color: var(--text-light);
-    opacity: 0.7;
-}
-
-#albumSearch:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    background: #222;
-}
-
-#albumSearch:hover {
-    border-color: var(--secondary-color);
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive Design */
@@ -259,7 +244,13 @@ footer {
     }
 
     .album-page {
-        grid-template-columns: repeat(2, 1fr); /* Ensure 2 albums per row */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    #searchBar {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 10px;
     }
 }
 
@@ -299,5 +290,15 @@ footer {
     footer {
         padding: 10px;
         font-size: 0.9rem;
+    }
+
+    .search-container {
+        padding: 5px;
+    }
+
+    #searchBar {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 8px;
     }
 }
