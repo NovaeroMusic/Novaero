@@ -1,187 +1,312 @@
-/* Resetting the CSS for a modern music streaming platform design */
-body, h1, h2, h3, p, ul, li {
+/* Global Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Base Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #e0e0e0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Darker background to match an artist profile vibe */
-    color: #fff;
-    line-height: 1.6;
+/* Root Variables */
+:root {
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --primary-color: #bf00ff;
+    --secondary-color: #9a00cc;
+    --background-dark: #333;
+    --text-light: #ffffff;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-medium);
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-medium);
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--text-light);
+}
+
+/* Header */
+.hero {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow-x: hidden; 
-    padding-top: 80px;
-}
-
-header {
-    width: 100%;
-    background-color: #534080; /* Keep the original background color */
-    color: #fff;
-    padding: 2px 20px; /* Smaller padding for a more compact header */
+    height: 60vh;
+    background: url('../images/hero-background.jpg') no-repeat center center/cover;
     text-align: center;
-    font-size: 24px; /* Smaller font size */
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for subtle depth */
-    position: fixed; /* Keeps the header fixed at the top of the page */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure the header stays on top of other elements */
+    padding: var(--spacing-medium);
+    animation: fadeIn 2s ease-in-out;
 }
 
-header:hover {
-    background-color: #4a3455; /* Hover effect */
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.8);
 }
 
+.hero p {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-medium);
+}
+
+/* Style for the poem paragraph */
+p.poem {
+    font-family: 'Georgia', serif;  /* A classic, literary font */
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-style: italic;
+    color: #ffffff;                 /* White text */
+    text-align: left;
+    margin: 2em auto;
+    max-width: 600px;
+    padding-left: 20px;
+    border-left: 3px solid #bf00ff; /* A colored vertical line for a poetic look */
+    position: relative;
+}
+
+/* Pseudo-element to reference the poem and its author */
+p.poem::after {
+    content: "— From 'Silent Tears of a Mother' by Novaero";
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+/* Album Section */
 .album-page {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns per row on larger screens */
-    gap: 30px;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-large);
 }
 
 .album-item {
+    background: var(--background-dark);
+    padding: var(--spacing-medium);
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    background-color: #1e1e1e;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
-    overflow: hidden;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, background 0.3s;
+    text-align: center;
     width: 100%;
-    max-width: 100%; /* Ensure it fills the available width */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Prevents overflow of content */
-}
-
-.album-cover {
-    flex: 1;
-    padding-right: 20px;
-    min-width: 0; /* Prevents overflow */
+    max-width: 500px;
 }
 
 .album-cover img {
-    max-width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    object-fit: cover; /* Ensures proper aspect ratio without overflow */
-}
-
-.album-cover img:hover {
-    transform: scale(1.05); /* Zoom effect for album covers */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0px 0px 10px var(--primary-color);
 }
 
 .album-info {
-    flex: 2;
-    padding: 20px;
-    text-align: left;
-    color: #bbb;
-    min-width: 0; /* Prevents content overflow */
+    margin-top: var(--spacing-medium);
 }
 
 .album-info h2 {
-    font-size: 24px; /* Larger album titles */
-    color: #fff;
-    margin-bottom: 12px;
-    font-weight: bold;
-    text-transform: uppercase; /* Uppercase title for a more dramatic effect */
+    color: var(--primary-color);
 }
 
 .album-info p {
-    font-size: 16px;
-    margin-bottom: 18px;
+    margin: var(--spacing-small) 0;
 }
 
-.styled-list {
+/* Tracklist Section */
+.tracklist {
+    text-align: center;
+    margin-top: var(--spacing-large);
+}
+
+.tracklist h2 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.tracklist ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
 }
 
-.styled-list a {
-    text-decoration: none;
-    background-color: #4a3455; /* Dark button style */
-    color: #fff;
-    padding: 12px 30px; /* Bigger buttons for emphasis */
-    border-radius: 30px; /* Larger rounded corners */
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.styled-list a:hover {
-    background-color: #6449a3; /* Hover effect */
-    transform: scale(1.05); /* Slightly bigger on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
-}
-
-footer {
-    width: 100%;
-    background-color: #222;
-    color: white;
-    padding: 30px 20px;
+.tracklist li {
+    background: var(--background-dark);
+    padding: var(--spacing-small);
+    border-radius: 5px;
+    margin: var(--spacing-small) auto;
+    width: 60%;  /* Reduced from 80% to make the list slimmer */
     text-align: center;
-    border-top: 3px solid #534080;
-    font-size: 14px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for each track list item */
+.tracklist li:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* New rule to make tracklist links appear as white text without underlines */
+.tracklist li a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+/* Streaming Links */
+.streaming-links {
+    text-align: center;
+    margin-top: var(--spacing-large);
+}
+
+.streaming-links h2 {
+    color: var(--primary-color);
+}
+
+.streaming-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.streaming-links li {
+    margin: var(--spacing-small) 0;
+}
+
+.streaming-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.streaming-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: var(--spacing-medium);
+    text-align: center;
+    color: var(--primary-color);
+    clear: both;  /* Ensures footer clears any floated elements */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        font-size: 20px; /* Smaller header for tablets */
-        padding: 15px 10px; /* Slightly less padding */
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
-    /* Adjust album grid for tablets */
+    .hero p {
+        font-size: 1rem;
+    }
+
     .album-page {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .book-info h2 {
-        font-size: 18px; /* Smaller title for better readability */
+    .album-item {
+        width: 90%;
     }
 
-    .styled-list a {
-        padding: 8px 20px;
-        font-size: 14px;
+    .tracklist li {
+        width: 90%;  /* On smaller screens, allow more width */
+    }
+
+    .streaming-links a {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        font-size: 18px; /* Smaller header for mobile */
-        padding: 10px; /* Less padding on mobile */
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    /* Stack albums vertically on mobile */
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .album-item {
+        width: 100%;
+        padding: var(--spacing-small);
+    }
+
+    .tracklist li {
+        width: 100%;
+    }
+
+    .streaming-links a {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: var(--spacing-small);
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop Layout for Album, Tracklist, and Streaming Links */
+@media (min-width: 769px) {
     .album-page {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: 15px;
+        float: left;
+        width: 60%;
+        margin-top: var(--spacing-large);
     }
-
-    .book-info h2 {
-        font-size: 16px; /* Even smaller title on mobile */
-    }
-
-    .styled-list a {
-        padding: 6px 15px;
-        font-size: 12px;
-    }
-
-    /* Adjust images in album cards */
-    .book-cover img {
-        width: 100%; /* Make sure images don't overflow */
-        max-width: 100%;
+    .tracklist,
+    .streaming-links {
+        float: right;
+        width: 35%;
+        margin-top: var(--spacing-large);
     }
 }
