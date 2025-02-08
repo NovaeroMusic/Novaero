@@ -297,8 +297,10 @@ footer {
     }
 
     #searchBar {
-        width: 100%;
+        width: 100%; /* Ensures it doesn't exceed the container width */
+        max-width: 300px; /* Limits its maximum width */
         font-size: 0.85rem;
         padding: 8px;
+        margin: 0 auto; /* Centers the search bar */
     }
 }
