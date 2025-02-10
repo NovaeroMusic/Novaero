@@ -108,7 +108,7 @@ p.poem {
 
 /* Pseudo-element to reference the poem and its author */
 p.poem::after {
-    content: "— From 'Silent Tears of a Mother' by Novaero";
+    content: "— From '" attr(data-source) "' by Novaero";
     display: block;
     text-align: right;
     font-size: 0.9em;
