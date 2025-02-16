@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Novaero's Poetry</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Novaero's Poetry - Dive into Lyrical Expression">
@@ -24,11 +23,12 @@
     <meta name="twitter:image" content="https://novaero.com/images/PhantomsPromise-CoverArt.jpg">
 
     <!-- Additional Meta Tags for SEO -->
-  <meta name="theme-color" content="#bf00ff">
-  <meta name="language" content="English">
-  <meta name="revisit-after" content="7 days">
-  <meta name="rating" content="General">
+    <meta name="theme-color" content="#bf00ff">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
 
+    <title>Poetry - Novaero</title>
     <link rel="canonical" href="https://novaero.com/poetry.html">
     <link rel="stylesheet" href="Stylesheets/poetry.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -36,102 +36,100 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
-    </head>
+</head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">Novaero</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li><a href="playlists.html">Playlist</a></li>
-            <li><a href="poetry.html" class="active">Poetry</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../music.html">Music</a></li>
+            <li><a href="../playlists.html">Playlists</a></li>
+            <li><a href="../poetry.html" class="active">Poetry</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Novaero's Poetry</h1>
-        <p>Dive into the lyrical depths and rhythmic echoes of Novaero's soul.</p>
+        <h1>Poetry</h1>
+        <p>Explore Novaero's poetic works, from published books to individual poems.</p>
     </header>
 
-    <main class="poetry-content">
-        <section class="books-section">
-            <h2>Published Poetry Books</h2>
-            <ul class="book-list">
-                <li class="book-item">
-                    <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover" class="book-cover">
-                    <div class="book-details">
-                        <h3>Phantom's Promise</h3>
-                        <p>Author: Novaero</p>
-                        <p>Published: December 2024</p>
-                        <a href="books/Phantom's Promise.pdf" download class="download-btn">Download</a>
-                    </div>
-                </li>
-                </ul>
-        </section>
+    <div class="tabs-container">
+        <button class="tab-btn active" onclick="openTab(event, 'books')">Published Books</button>
+        <button class="tab-btn" onclick="openTab(event, 'poems')">Single Poems</button>
+    </div>
 
-        <section class="poems-section">
-            <h2>Single Poems</h2>
+    <div id="books" class="tab-content active">
+        <h2>Published Poetry Books</h2>
+        <div class="book-item">
+            <img src="images/PhantomsPromise-CoverArt.jpg" alt="Phantom's Promise Cover" class="book-cover">
+            <div class="book-details">
+                <h3>Phantom's Promise</h3>
+                <p>Author: Novaero</p>
+                <p>Published: January 15, 2023</p>
+                
+                <p class="book-teaser">
+                    yet still, in the stillness of night,
+                    a flicker of hope, a guiding light
+                </p>
+                
+                <a href="books/Phantom's Promise.pdf" target="_blank" class="download-btn">Download</a>
+            </div>
+        </div>
+    </div>
 
-            <input type="text" id="poemSearch" placeholder="Search poems...">
+    <div id="poems" class="tab-content">
+        <h2>Single Poems</h2>
+        <input type="text" id="searchInput" placeholder="Search poems..." onkeyup="filterPoems()">
+        <ul id="poemsList" class="poem-list">
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/18255326-Trinity-by-Novaero', '_blank')"><span class="poem-title">Trinity</span> <span class="poem-date">- Feb 14, 2025</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/18095054-Novaero-XXI-by-Novaero', '_blank')"><span class="poem-title">Novaero XXI</span> <span class="poem-date">- Nov 7, 2024</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/18059598-Illuminate-by-Novaero', '_blank')"><span class="poem-title">Illuminate</span> <span class="poem-date">- Oct 17, 2024</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17971255-Silent-Tears-of-A-Mother-by-Novaero', '_blank')"><span class="poem-title">Silent Tears of A Mother</span> <span class="poem-date">- Aug 18, 2024</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17942383-how-many-more-years-by-Novaero', '_blank')"><span class="poem-title">how many more years</span> <span class="poem-date">- Aug 5, 2024</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17487962-In-the-dance-of-redemption-by-Novaero', '_blank')"><span class="poem-title">In the dance of redemption</span> <span class="poem-date">- Nov 19, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17455194-Fatal-blow-by-Novaero', '_blank')"><span class="poem-title">Fatal blow</span> <span class="poem-date">- Oct 31, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17428985-M.C.-by-Novaero/', '_blank')"><span class="poem-title">M.C.</span> <span class="poem-date">- Oct 15, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17342886-Whispers-of-Unseen-Echoes-by-Novaero', '_blank')"><span class="poem-title">Whispers of Unseen Echoes</span> <span class="poem-date">- Aug 26, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17299367-f.f.-by-Novaero/', '_blank')"><span class="poem-title">f.f.</span> <span class="poem-date">- Aug 1, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17247953-kaizen-by-Novaero', '_blank')"><span class="poem-title">kaizen</span> <span class="poem-date">- Jul 1, 2023</span></li>
+            <li class="poem-item" onclick="window.open('https://allpoetry.com/poem/17235290-Harmonica-by-Novaero', '_blank')"><span class="poem-title">Harmonica</span> <span class="poem-date">- Jun 23, 2023</span></li>
+        </ul>
+    </div>
 
-            <ul class="poem-list">
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/18095054-Novaero-XXI-by-Novaero" target="_blank">Novaero XXI</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/18059598-Illuminate-by-Novaero" target="_blank">Illuminate</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17942383-how-many-more-years-by-Novaero" target="_blank">how many more years</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17487962-In-the-dance-of-redemption-by-Novaero" target="_blank">In the dance of redemption</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17455194-Fatal-blow-by-Novaero" target="_blank">Fatal blow</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17428985-M.C.-by-Novaero/" target="_blank">M.C.</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17299367-f.f.-by-Novaero/" target="_blank">f.f.</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17342886-Whispers-of-Unseen-Echoes-by-Novaero" target="_blank">Whispers of Unseen Echoes</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17247953-kaizen-by-Novaero" target="_blank">kaizen</a>
-                </li>
-                <li class="poem-item">
-                    <a href="https://allpoetry.com/poem/17235290-Harmonica-by-Novaero" target="_blank">Harmonica</a>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Novaero. All Rights Reserved.</p>
+        <p>&copy; 2024 Novaero. All Rights Reserved.</p>
         <p>Site by <i>Skye</i>.</p>
     </footer>
 
     <script>
-        const poemSearch = document.getElementById('poemSearch');
-        const poemList = document.querySelector('.poem-list');
-        const poemItems = poemList.querySelectorAll('.poem-item'); // Get all list items
+        function openTab(event, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
 
-        poemSearch.addEventListener('input', (event) => {
-            const searchTerm = event.target.value.toLowerCase();
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            poemItems.forEach(item => {
-                const poemTitle = item.querySelector('a').textContent.toLowerCase();
-                if (poemTitle.includes(searchTerm)) {
-                    item.style.display = 'block'; // Show the item
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function filterPoems() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById('poemsList');
+            const li = ul.getElementsByTagName('li');
+
+            for (let i = 0; i < li.length; i++) {
+                const title = li[i].getElementsByClassName('poem-title')[0].innerText.toLowerCase();
+                if (title.indexOf(filter) > -1) {
+                    li[i].style.display = '';
                 } else {
-                    item.style.display = 'none'; // Hide the item
+                    li[i].style.display = 'none';
                 }
-            });
-        });
+            }
+        }
     </script>
 </body>
 </html>
+        
