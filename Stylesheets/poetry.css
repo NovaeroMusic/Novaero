@@ -264,6 +264,29 @@ nav a.active {
     background-color: var(--secondary-color);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+* {
+    scrollbar-color: var(--primary-color) #444;
+    scrollbar-width: thin;
+}
+
 /* Footer */
 footer {
     text-align: center;
