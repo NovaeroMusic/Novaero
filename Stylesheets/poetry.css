@@ -81,6 +81,62 @@ nav a.active {
     color: var(--text-light);
 }
 
+/* Poems Section */
+#poemsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.poem-item {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.poem-item:hover {
+    background-color: #bf00ff;
+}
+
+.poem-title {
+    font-size: 16px;
+}
+
+.poem-date {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Search Bar */
+.search-container {
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+#searchInput {
+    width: 70%;  /* Reduced the width from 80% to 70% */
+    max-width: 350px;  /* Reduced max-width from 400px to 350px */
+    padding: 10px;
+    font-size: 0.9rem;  /* Reduced font size to make the search bar more compact */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: #222;
+    color: var(--text-light);
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+
 /* Tabs */
 .tabs-container {
     text-align: center;
